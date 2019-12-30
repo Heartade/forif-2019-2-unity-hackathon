@@ -29,10 +29,12 @@ public class CharacterMovement : MonoBehaviour
 
 	private void FixedUpdate()
 	{
-		rb.MovePosition(rb.position + movement * moveSpeed);
+		rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
 
 		Vector2 lookDir = mousepos - rb.position;
 		float angle = Mathf.Atan2(lookDir.y, lookDir.x)*Mathf.Rad2Deg - 90f;
+
+		Debug.Log(angle);
 		rb.rotation = angle;
 	}
 }

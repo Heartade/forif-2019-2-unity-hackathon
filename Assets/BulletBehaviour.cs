@@ -39,7 +39,7 @@ public class BulletBehaviour : MonoBehaviour
 
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
-		if ( collision.gameObject.GetComponent<BulletBehaviour>() == null && collision.gameObject.GetComponent<EnemyBehaviour>() == null) GameObject.Destroy(gameObject);
+		if ( collision.gameObject.GetComponent<bullet>() == null && collision.gameObject.GetComponent<BulletBehaviour>() == null && collision.gameObject.GetComponent<EnemyBehaviour>() == null) GameObject.Destroy(gameObject);
 		PlayerBehaviour temp = collision.gameObject.GetComponent<PlayerBehaviour>();
 		if ( temp != null ) temp.AddKcal(power);
 	}

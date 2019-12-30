@@ -53,7 +53,7 @@ public class DonutController : MonoBehaviour
         PlayerBehaviour player = collision.gameObject.GetComponent<PlayerBehaviour>();
         if (player != null)
         {
-            player.AddKcal(1000);
+            player.AddKcal(500);
         }
     }
 }
